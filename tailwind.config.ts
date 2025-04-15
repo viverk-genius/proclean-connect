@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+                optimo: {
+                    blue: {
+                        DEFAULT: '#002B7F',
+                        light: '#0047AB'
+                    },
+                    green: {
+                        DEFAULT: '#1E8449',
+                        light: '#27AE60',
+                        bright: '#2ECC71'
+                    }
+                },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
