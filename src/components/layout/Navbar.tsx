@@ -43,7 +43,11 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="OPTIMO PROPRETÉ" 
-            className="h-14 object-contain"  // Added object-contain to preserve aspect ratio
+            className="h-14 w-auto object-contain"  // Added w-auto to ensure width scales with height
+            onError={(e) => {
+              console.error('Logo failed to load', e);
+              e.currentTarget.style.display = 'none';
+            }}
           />
         </Link>
         
@@ -108,3 +112,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
