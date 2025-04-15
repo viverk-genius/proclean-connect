@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -26,7 +25,6 @@ const Navbar = () => {
   }, []);
   
   useEffect(() => {
-    // Close mobile menu when navigation occurs
     setIsMenuOpen(false);
   }, [location.pathname]);
 
@@ -43,15 +41,19 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="OPTIMO PROPRETÉ" 
-            className="h-14 w-auto object-contain"  // Added w-auto to ensure width scales with height
+            className="h-14 w-auto object-contain"
             onError={(e) => {
               console.error('Logo failed to load', e);
+              console.log('Logo source:', e.currentTarget.src);
+              console.log('Current path:', window.location.pathname);
               e.currentTarget.style.display = 'none';
+            }}
+            onLoad={(e) => {
+              console.log('Logo loaded successfully');
             }}
           />
         </Link>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link
@@ -69,7 +71,6 @@ const Navbar = () => {
           </Button>
         </nav>
         
-        {/* Mobile menu button */}
         <button
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={toggleMenu}
@@ -79,7 +80,6 @@ const Navbar = () => {
         </button>
       </div>
       
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -112,4 +112,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
