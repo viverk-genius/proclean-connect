@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -39,7 +40,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img 
-            src="/logo.png" 
+            src="/lovable-uploads/49aacff5-c2be-4d4f-ac3b-e754f03c0ec4.png" 
             alt="OPTIMO PROPRETÉ" 
             className="h-14 w-auto object-contain"
             onError={(e) => {
