@@ -9,6 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import CallToAction from "@/components/home/CallToAction";
 
+// Import des images générées
+import entretienImmeubles from "@/assets/entretien-immeubles.jpg";
+import menageBureaux from "@/assets/menage-bureaux.jpg";
+import remiseEtatChantier from "@/assets/remise-etat-chantier.jpg";
+import desinfectionSurfaces from "@/assets/desinfection-surfaces.jpg";
+import nettoyageHautePression from "@/assets/nettoyage-haute-pression.jpg";
+import espacesVerts from "@/assets/espaces-verts.jpg";
+import servicesParticuliers from "@/assets/services-particuliers.jpg";
+
 const services = [
   {
     id: "immeubles",
@@ -24,7 +33,7 @@ const services = [
       "Entretien des parkings et espaces extérieurs",
       "Intervention régulière ou sur-mesure"
     ],
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: entretienImmeubles,
     color: "bg-primary/10",
     iconColor: "text-primary"
   },
@@ -42,7 +51,7 @@ const services = [
       "Nettoyage des vitres et miroirs",
       "Désinfection des points de contact"
     ],
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: menageBureaux,
     color: "bg-secondary/10",
     iconColor: "text-secondary"
   },
@@ -60,7 +69,7 @@ const services = [
       "Nettoyage des vitres, encadrements et rebords",
       "Finitions soignées pour une livraison parfaite"
     ],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: remiseEtatChantier,
     color: "bg-optimo-green-bright/10",
     iconColor: "text-optimo-green-bright"
   },
@@ -78,7 +87,7 @@ const services = [
       "Traitement des surfaces sensibles",
       "Produits adaptés et respectueux"
     ],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: desinfectionSurfaces,
     color: "bg-optimo-green/10",
     iconColor: "text-optimo-green"
   },
@@ -96,7 +105,7 @@ const services = [
       "Démoussage de toitures",
       "Équipement haute performance"
     ],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: nettoyageHautePression,
     color: "bg-blue-500/10",
     iconColor: "text-blue-500"
   },
@@ -114,7 +123,7 @@ const services = [
       "Entretien des allées et cheminements",
       "Maintenance préventive"
     ],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: espacesVerts,
     color: "bg-green-500/10",
     iconColor: "text-green-500"
   },
@@ -132,7 +141,7 @@ const services = [
       "Intervention rapide et efficace",
       "Services adaptés aux besoins spécifiques"
     ],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: servicesParticuliers,
     color: "bg-purple-500/10",
     iconColor: "text-purple-500"
   }
