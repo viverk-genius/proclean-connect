@@ -12,19 +12,19 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1">
             <Link to="/" className="block mb-4">
-              <img src="/logo.png" alt="OPTIMO PROPRETÉ" className="h-16" />
+              <img src="/lovable-uploads/49aacff5-c2be-4d4f-ac3b-e754f03c0ec4.png" alt="OPTIMO PROPRETÉ" className="h-16" />
             </Link>
             <p className="text-gray-600 mb-4">
               OPTIMO PROPRETÉ vous accompagne dans tous vos besoins de nettoyage professionnel avec qualité et fiabilité.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/people/Optimo-Propret%C3%A9/100067872561763/#" className="text-gray-500 hover:text-primary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/optimo_proprete/?igsh=MXE3ejlyMTR6bTQ0dA%3D%3D#" className="text-gray-500 hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/company/optimo-propret%C3%A9/posts/?feedView=all" className="text-gray-500 hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -90,7 +90,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone size={18} className="mr-2 text-secondary mt-1 flex-shrink-0" />
-                <span className="text-gray-600">01 23 45 67 89</span>
+                <span className="text-gray-600">01 87 90 93 03</span>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="mr-2 text-secondary mt-1 flex-shrink-0" />
@@ -98,7 +98,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-secondary mt-1 flex-shrink-0" />
-                <span className="text-gray-600">123 rue de la Propreté<br />75000 Paris</span>
+                <span className="text-gray-600">47 Rue Jules Ferry<br />91390 Morsang-sur-Orge</span>
               </li>
               <li className="flex items-start">
                 <Clock size={18} className="mr-2 text-secondary mt-1 flex-shrink-0" />

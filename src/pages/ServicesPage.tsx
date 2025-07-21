@@ -11,7 +11,7 @@ import CallToAction from "@/components/home/CallToAction";
 
 // Import des images générées
 import entretienImmeubles from "@/assets/entretien-immeubles.jpg";
-import menageBureaux from "@/assets/menage-bureaux.jpg";
+import menageBureaux from "@/assets/menage bureaux.jpg";
 import remiseEtatChantier from "@/assets/remise-etat-chantier.jpg";
 import desinfectionSurfaces from "@/assets/desinfection-surfaces.jpg";
 import nettoyageHautePression from "@/assets/nettoyage-haute-pression.jpg";

@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/section-title";
 import CallToAction from "@/components/home/CallToAction";
+import team from "@/assets/team.jpg";
 
 const values = [
   {
@@ -87,7 +88,7 @@ const AboutPage = () => {
                 className="relative"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1594142604298-163431def9eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  src={team} 
                   alt="Notre équipe" 
                   className="rounded-lg shadow-xl"
                 />
