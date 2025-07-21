@@ -24,7 +24,7 @@ const services = [
       "Entretien des parkings et espaces extérieurs",
       "Intervention régulière ou sur-mesure"
     ],
-    image: "https://images.unsplash.com/photo-1545476745-8c904ca53e51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-primary/10",
     iconColor: "text-primary"
   },
@@ -42,7 +42,7 @@ const services = [
       "Nettoyage des vitres et miroirs",
       "Désinfection des points de contact"
     ],
-    image: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-secondary/10",
     iconColor: "text-secondary"
   },
@@ -60,7 +60,7 @@ const services = [
       "Nettoyage des vitres, encadrements et rebords",
       "Finitions soignées pour une livraison parfaite"
     ],
-    image: "https://images.unsplash.com/photo-1577276734508-d334da896b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-optimo-green-bright/10",
     iconColor: "text-optimo-green-bright"
   },
@@ -78,7 +78,7 @@ const services = [
       "Traitement des surfaces sensibles",
       "Produits adaptés et respectueux"
     ],
-    image: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-optimo-green/10",
     iconColor: "text-optimo-green"
   },
@@ -96,7 +96,7 @@ const services = [
       "Démoussage de toitures",
       "Équipement haute performance"
     ],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-blue-500/10",
     iconColor: "text-blue-500"
   },
@@ -114,7 +114,7 @@ const services = [
       "Entretien des allées et cheminements",
       "Maintenance préventive"
     ],
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-green-500/10",
     iconColor: "text-green-500"
   },
@@ -132,7 +132,7 @@ const services = [
       "Intervention rapide et efficace",
       "Services adaptés aux besoins spécifiques"
     ],
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-purple-500/10",
     iconColor: "text-purple-500"
   }
