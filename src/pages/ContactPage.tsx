@@ -11,8 +11,14 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Téléphone",
-    content: "01 23 45 67 89",
-    link: "tel:0123456789"
+    content: "01 87 90 93 03",
+    link: "tel:0187909303"
+  },
+  {
+    icon: Phone,
+    title: "Mobile",
+    content: "06 23 48 79 82",
+    link: "tel:0623487982"
   },
   {
     icon: Mail,
@@ -22,9 +28,9 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Adresse",
-    content: "123 rue de la Propreté, 75000 Paris",
-    link: "https://maps.google.com"
+    title: "Zone d'intervention",
+    content: "Île-de-France (75, 77, 78, 91, 92, 93, 94, 95)",
+    link: null
   },
   {
     icon: Clock,
@@ -62,7 +68,7 @@ const ContactPage = () => {
         {/* Contact Info Cards */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -195,6 +201,28 @@ const ContactPage = () => {
                 >
                   <h3 className="text-lg font-semibold mb-2 text-gray-800">Vos équipes sont-elles formées et assurées ?</h3>
                   <p className="text-gray-600">Absolument. Tous nos collaborateurs sont formés aux techniques de nettoyage professionnel et aux normes de sécurité. Notre entreprise dispose de toutes les assurances nécessaires pour exercer notre activité.</p>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="bg-white p-6 rounded-xl shadow-md"
+                >
+                  <h3 className="text-lg font-semibold mb-2 text-gray-800">Intervenez-vous pour les particuliers ?</h3>
+                  <p className="text-gray-600">Oui, nous proposons des services personnalisés pour les particuliers : nettoyage d'appartements, entretien moquettes et canapés, ménage de printemps, débarras. Nous nous adaptons à vos besoins spécifiques.</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="bg-white p-6 rounded-xl shadow-md"
+                >
+                  <h3 className="text-lg font-semibold mb-2 text-gray-800">Quel est votre engagement environnemental ?</h3>
+                  <p className="text-gray-600">Nous sommes une équipe de professionnels passionnés, dédiée à offrir des services de nettoyage et de désinfection d'excellence dans toute l'Île-de-France, en utilisant exclusivement des produits écologiques.</p>
                 </motion.div>
               </div>
             </div>

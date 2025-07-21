@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Téléphone",
-    content: "01 23 45 67 89",
-    link: "tel:0123456789"
+    content: "01 87 90 93 03",
+    link: "tel:0187909303"
   },
   {
     icon: Mail,
@@ -20,9 +20,9 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Adresse",
-    content: "123 rue de la Propreté, 75000 Paris",
-    link: "https://maps.google.com"
+    title: "Zone d'intervention",
+    content: "Île-de-France",
+    link: "https://www.optimo-proprete.fr"
   }
 ];
 
@@ -64,7 +64,7 @@ const Contact = () => {
         
         <div className="text-center">
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Que vous ayez besoin d'un devis personnalisé ou simplement d'informations sur nos services, notre équipe est à votre disposition pour vous répondre dans les plus brefs délais.
+            Votre partenaire pour des espaces impeccables. Notre équipe de professionnels passionnés est à votre disposition pour vous répondre dans les plus brefs délais.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

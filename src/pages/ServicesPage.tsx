@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Building, Briefcase, Hammer, Check, ArrowRight } from "lucide-react";
+import { Building, Briefcase, Hammer, Check, ArrowRight, Droplets, TreePine, Sparkles, Shield, Users, Home } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -18,7 +18,7 @@ const services = [
     longDescription: "Notre service d'entretien d'immeubles couvre le nettoyage complet des parties communes, y compris les halls d'entrée, escaliers, ascenseurs et locaux techniques. Nous assurons l'entretien régulier des sols, le lavage des vitres, le dépoussiérage des équipements et l'élimination des déchets. Notre équipe respecte des protocoles stricts pour garantir la propreté et l'hygiène de votre immeuble, contribuant ainsi au bien-être de tous les résidents.",
     features: [
       "Nettoyage des halls d'entrée et couloirs",
-      "Entretien des escaliers et ascenseurs",
+      "Entretien des escaliers et ascenseurs", 
       "Lavage des vitres et surfaces vitrées",
       "Nettoyage des locaux à poubelles",
       "Entretien des parkings et espaces extérieurs",
@@ -29,7 +29,7 @@ const services = [
     iconColor: "text-primary"
   },
   {
-    id: "bureaux",
+    id: "bureaux", 
     icon: Briefcase,
     title: "Ménage de bureaux",
     shortDescription: "Entretien régulier des espaces de travail, sanitaires et salles de réunion.",
@@ -37,7 +37,7 @@ const services = [
     features: [
       "Dépoussiérage des bureaux et équipements",
       "Nettoyage des sols (aspiration, lavage)",
-      "Entretien des sanitaires et cuisines",
+      "Entretien des sanitaires et cuisines", 
       "Vidage des corbeilles et recyclage",
       "Nettoyage des vitres et miroirs",
       "Désinfection des points de contact"
@@ -49,20 +49,113 @@ const services = [
   {
     id: "chantier",
     icon: Hammer,
-    title: "Remise en état après chantier",
+    title: "Remise en état après chantier", 
     shortDescription: "Nettoyage complet après travaux, élimination des déchets de construction.",
     longDescription: "Après des travaux de construction ou de rénovation, notre service de remise en état assure un nettoyage en profondeur pour rendre l'espace prêt à l'utilisation. Nous éliminons tous les résidus de chantier (poussière, débris, traces de matériaux), nettoyons toutes les surfaces, y compris les zones difficiles d'accès, et effectuons un traitement spécifique des sols, murs et vitres. Notre intervention minutieuse révèle la beauté de votre espace rénové.",
     features: [
       "Évacuation des déchets et débris de chantier",
       "Dépoussiérage complet des surfaces",
       "Nettoyage en profondeur des sols",
-      "Détartrage et traitement des sanitaires",
+      "Détartrage et traitement des sanitaires", 
       "Nettoyage des vitres, encadrements et rebords",
       "Finitions soignées pour une livraison parfaite"
     ],
     image: "https://images.unsplash.com/photo-1577276734508-d334da896b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     color: "bg-optimo-green-bright/10",
     iconColor: "text-optimo-green-bright"
+  },
+  {
+    id: "desinfection",
+    icon: Shield,
+    title: "Désinfection des surfaces sensibles",
+    shortDescription: "Décapage, lustrage, cirage, shampooing moquette pour surfaces délicates.",
+    longDescription: "Notre service de désinfection des surfaces sensibles garantit une hygiène optimale pour tous types d'environnements. Nous utilisons des techniques spécialisées et des produits adaptés pour traiter en douceur vos surfaces délicates tout en assurant une désinfection efficace contre les virus et bactéries.",
+    features: [
+      "Décapage professionnel des sols",
+      "Lustrage et cirage des surfaces",
+      "Shampooing moquette en profondeur",
+      "Désinfection contre virus et bactéries",
+      "Traitement des surfaces sensibles",
+      "Produits adaptés et respectueux"
+    ],
+    image: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    color: "bg-optimo-green/10",
+    iconColor: "text-optimo-green"
+  },
+  {
+    id: "haute-pression",
+    icon: Droplets,
+    title: "Nettoyage haute pression",
+    shortDescription: "Nettoyage de façades, terrasses et parkings avec équipement haute pression.",
+    longDescription: "Notre service de nettoyage haute pression redonne éclat et propreté à vos surfaces extérieures. Grâce à notre équipement professionnel, nous éliminons efficacement mousses, lichens, salissures et dépôts tenaces sur façades, terrasses et parkings.",
+    features: [
+      "Nettoyage de façades d'immeubles",
+      "Rénovation de terrasses et cours",
+      "Entretien des parkings",
+      "Élimination mousses et lichens",
+      "Démoussage de toitures",
+      "Équipement haute performance"
+    ],
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    color: "bg-blue-500/10",
+    iconColor: "text-blue-500"
+  },
+  {
+    id: "espaces-verts",
+    icon: TreePine,
+    title: "Entretien espaces verts & toitures",
+    shortDescription: "Maintenance des espaces verts et nettoyage spécialisé des toitures.",
+    longDescription: "Nous prenons soin de vos espaces verts et assurons l'entretien de vos toitures. Notre équipe spécialisée maintient la beauté de vos jardins, espaces verts communs et assure la longévité de vos toitures par un nettoyage adapté.",
+    features: [
+      "Taille et entretien des végétaux",
+      "Nettoyage des espaces verts communs",
+      "Démoussage et nettoyage de toitures",
+      "Évacuation des déchets verts",
+      "Entretien des allées et cheminements",
+      "Maintenance préventive"
+    ],
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    color: "bg-green-500/10",
+    iconColor: "text-green-500"
+  },
+  {
+    id: "particuliers",
+    icon: Home,
+    title: "Services pour particuliers",
+    shortDescription: "Nettoyage d'appartements, entretien moquettes et ménage de printemps.",
+    longDescription: "Nous proposons des services personnalisés pour les particuliers, adaptés à vos besoins spécifiques. De l'entretien régulier de votre domicile au grand ménage de printemps, notre équipe vous accompagne pour maintenir un cadre de vie sain et agréable.",
+    features: [
+      "Nettoyage d'appartements intérieur et extérieur",
+      "Entretien des moquettes, canapés, terrasses et balcons",
+      "Ménage de printemps pour remise à neuf complète",
+      "Débarras caves, greniers et box de stockage",
+      "Intervention rapide et efficace",
+      "Services adaptés aux besoins spécifiques"
+    ],
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    color: "bg-purple-500/10",
+    iconColor: "text-purple-500"
+  }
+];
+
+const specializedServices = [
+  {
+    title: "Engagement environnemental",
+    description: "Utilisation exclusive de produits écologiques pour préserver la planète.",
+    icon: TreePine,
+    features: ["Produits certifiés écologiques", "Respect de l'environnement", "Tri des déchets et valorisation"]
+  },
+  {
+    title: "Désinfection et assainissement de l'air",
+    description: "Mise en place de purificateurs d'air pour un environnement sain.",
+    icon: Shield,
+    features: ["Purification de l'air", "Élimination des allergènes", "Amélioration de la qualité de l'air"]
+  },
+  {
+    title: "Zones d'intervention",
+    description: "Déplacements dans toute l'Île-de-France avec devis personnalisés.",
+    icon: Users,
+    features: ["Île-de-France complète", "Devis personnalisés", "Intervention rapide"]
   }
 ];
 
@@ -220,6 +313,44 @@ const ServicesPage = () => {
           </section>
         ))}
         
+        {/* Specialized Services */}
+        <section className="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
+          <div className="container mx-auto px-4">
+            <SectionTitle 
+              title="Nos services spécialisés" 
+              subtitle="Des prestations expertes avec un engagement fort pour l'environnement et votre bien-être."
+              centered
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {specializedServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white p-6 rounded-xl shadow-md text-center"
+                >
+                  <div className="bg-optimo-green-bright/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <service.icon size={24} className="text-optimo-green-bright" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-800">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center justify-center text-sm text-gray-600">
+                        <Check size={14} className="text-optimo-green-bright mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <CallToAction />
       </main>
       
