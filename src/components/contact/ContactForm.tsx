@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -17,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -56,17 +56,42 @@ const ContactForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log(values);
-      toast({
-        title: "Message envoyé !",
-        description: "Nous vous répondrons dans les plus brefs délais.",
+
+    // Remplace par tes propres IDs EmailJS
+    const serviceID = "service_n7b5qt5";
+    const templateID = "template_ihvco3d";
+    const userID = "DS7JhpmKaH0gh-gtX";
+
+    emailjs
+      .send(
+        serviceID,
+        templateID,
+        {
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          subject: values.subject,
+          message: values.message,
+          to_email: "contact@optimo-proprete.fr", // optionnel selon ton template
+        },
+        userID
+      )
+      .then(() => {
+        toast({
+          title: "Message envoyé !",
+          description: "Nous vous répondrons dans les plus brefs délais.",
+        });
+        form.reset();
+        setIsSubmitting(false);
+      })
+      .catch(() => {
+        toast({
+          title: "Erreur",
+          description: "Une erreur est survenue lors de l'envoi du message.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
       });
-      form.reset();
-      setIsSubmitting(false);
-    }, 1500);
   }
 
   return (
@@ -86,7 +111,7 @@ const ContactForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="email"
@@ -94,7 +119,11 @@ const ContactForm = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="jean.dupont@example.com" {...field} />
+                  <Input
+                    type="email"
+                    placeholder="jean.dupont@example.com"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,7 +145,7 @@ const ContactForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="subject"
@@ -124,7 +153,10 @@ const ContactForm = () => {
               <FormItem>
                 <FormLabel>Sujet</FormLabel>
                 <FormControl>
-                  <Input placeholder="Demande de renseignements" {...field} />
+                  <Input
+                    placeholder="Demande de renseignements"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -139,10 +171,10 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea 
-                  placeholder="Comment pouvons-nous vous aider ?" 
-                  className="min-h-32" 
-                  {...field} 
+                <Textarea
+                  placeholder="Comment pouvons-nous vous aider ?"
+                  className="min-h-32"
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
@@ -163,10 +195,12 @@ const ContactForm = () => {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel>
-                  J'accepte la politique de confidentialité et le traitement de mes données personnelles.
+                  J'accepte la politique de confidentialité et le traitement de mes
+                  données personnelles.
                 </FormLabel>
                 <FormDescription>
-                  Vos données personnelles seront utilisées uniquement pour traiter votre demande.
+                  Vos données personnelles seront utilisées uniquement pour traiter
+                  votre demande.
                 </FormDescription>
               </div>
               <FormMessage />
@@ -174,8 +208,8 @@ const ContactForm = () => {
           )}
         />
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-primary hover:bg-optimo-blue-light"
           disabled={isSubmitting}
         >

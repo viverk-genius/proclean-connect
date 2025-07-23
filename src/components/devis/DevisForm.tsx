@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -25,6 +24,7 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/components/ui/use-toast";
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -88,25 +88,49 @@ const DevisForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log(values);
-      toast({
-        title: "Demande envoyée !",
-        description: "Votre demande de devis a bien été reçue. Nous vous contacterons dans les plus brefs délais.",
+
+    // Remplace par tes propres IDs EmailJS
+    const serviceID = "service_n7b5qt5";
+    const templateID = "template_oqts388";
+    const userID = "DS7JhpmKaH0gh-gtX";
+
+    emailjs
+      .send(
+        serviceID,
+        templateID,
+        {
+          ...values,
+          to_email: "contact@optimo-proprete.fr", // Assure-toi que ce champ existe dans ton template EmailJS
+        },
+        userID
+      )
+      .then(() => {
+        toast({
+          title: "Demande envoyée !",
+          description:
+            "Votre demande de devis a bien été reçue. Nous vous contacterons dans les plus brefs délais.",
+        });
+        form.reset();
+        setIsSubmitting(false);
+      })
+      .catch(() => {
+        toast({
+          title: "Erreur",
+          description: "Une erreur est survenue lors de l'envoi du devis.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
       });
-      form.reset();
-      setIsSubmitting(false);
-    }, 1500);
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-gray-800">Vos coordonnées</h3>
-          
+          <h3 className="text-lg font-semibold text-gray-800">
+            Vos coordonnées
+          </h3>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
@@ -121,7 +145,7 @@ const DevisForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="lastName"
@@ -136,7 +160,7 @@ const DevisForm = () => {
               )}
             />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
@@ -145,13 +169,17 @@ const DevisForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="jean.dupont@example.com" {...field} />
+                    <Input
+                      type="email"
+                      placeholder="jean.dupont@example.com"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="phone"
@@ -166,7 +194,7 @@ const DevisForm = () => {
               )}
             />
           </div>
-          
+
           <FormField
             control={form.control}
             name="company"
@@ -181,34 +209,45 @@ const DevisForm = () => {
             )}
           />
         </div>
-        
+
         <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-gray-800">Détails de votre demande</h3>
-          
+          <h3 className="text-lg font-semibold text-gray-800">
+            Détails de votre demande
+          </h3>
+
           <FormField
             control={form.control}
             name="service"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service souhaité</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Sélectionnez un service" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="immeubles">Entretien d'immeubles</SelectItem>
+                    <SelectItem value="immeubles">
+                      Entretien d'immeubles
+                    </SelectItem>
                     <SelectItem value="bureaux">Ménage de bureaux</SelectItem>
-                    <SelectItem value="chantier">Remise en état après chantier</SelectItem>
-                    <SelectItem value="autre">Autre (précisez dans les détails)</SelectItem>
+                    <SelectItem value="chantier">
+                      Remise en état après chantier
+                    </SelectItem>
+                    <SelectItem value="autre">
+                      Autre (précisez dans les détails)
+                    </SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="frequency"
@@ -225,7 +264,9 @@ const DevisForm = () => {
                       <FormControl>
                         <RadioGroupItem value="ponctuel" />
                       </FormControl>
-                      <FormLabel className="font-normal">Intervention ponctuelle</FormLabel>
+                      <FormLabel className="font-normal">
+                        Intervention ponctuelle
+                      </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
@@ -243,7 +284,9 @@ const DevisForm = () => {
                       <FormControl>
                         <RadioGroupItem value="autre" />
                       </FormControl>
-                      <FormLabel className="font-normal">Autre (précisez dans les détails)</FormLabel>
+                      <FormLabel className="font-normal">
+                        Autre (précisez dans les détails)
+                      </FormLabel>
                     </FormItem>
                   </RadioGroup>
                 </FormControl>
@@ -251,14 +294,17 @@ const DevisForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="surface"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Surface approximative (m²)</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Sélectionnez la surface" />
@@ -278,10 +324,12 @@ const DevisForm = () => {
             )}
           />
         </div>
-        
+
         <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-gray-800">Adresse du lieu à nettoyer</h3>
-          
+          <h3 className="text-lg font-semibold text-gray-800">
+            Adresse du lieu à nettoyer
+          </h3>
+
           <FormField
             control={form.control}
             name="address"
@@ -295,7 +343,7 @@ const DevisForm = () => {
               </FormItem>
             )}
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
@@ -310,7 +358,7 @@ const DevisForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="city"
@@ -325,7 +373,7 @@ const DevisForm = () => {
               )}
             />
           </div>
-          
+
           <FormField
             control={form.control}
             name="details"
@@ -333,10 +381,10 @@ const DevisForm = () => {
               <FormItem>
                 <FormLabel>Informations complémentaires (optionnel)</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="Précisions sur vos besoins, accès, contraintes particulières..." 
-                    className="min-h-32" 
-                    {...field} 
+                  <Textarea
+                    placeholder="Précisions sur vos besoins, accès, contraintes particulières..."
+                    className="min-h-32"
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -358,10 +406,12 @@ const DevisForm = () => {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel>
-                  J'accepte la politique de confidentialité et le traitement de mes données personnelles.
+                  J'accepte la politique de confidentialité et le traitement de mes
+                  données personnelles.
                 </FormLabel>
                 <FormDescription>
-                  Vos données personnelles seront utilisées uniquement pour traiter votre demande de devis.
+                  Vos données personnelles seront utilisées uniquement pour traiter
+                  votre demande de devis.
                 </FormDescription>
               </div>
               <FormMessage />
@@ -369,8 +419,8 @@ const DevisForm = () => {
           )}
         />
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-primary hover:bg-optimo-blue-light"
           disabled={isSubmitting}
         >
