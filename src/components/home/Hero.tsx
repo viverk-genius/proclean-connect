@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
@@ -44,7 +45,7 @@ const Hero = () => {
           >
             <div className="relative z-10 bg-white p-4 rounded-2xl shadow-2xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src={heroImage} 
                 alt="Service de nettoyage professionnel" 
                 className="w-full h-auto rounded-xl"
               />
